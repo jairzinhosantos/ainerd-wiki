@@ -4,6 +4,7 @@ title: MCP
 subtitle: Model Context Protocol — el protocolo que conecta modelos con el mundo
 icon: fas fa-plug
 accent: i
+pillar: academia
 status: available
 tags: [MCP, protocolo, herramientas, integración]
 updated: 2026-07-05

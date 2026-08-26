@@ -23,6 +23,7 @@ title: RAG
 subtitle: Una línea que resume el capítulo
 icon: fas fa-database      # icono Font Awesome
 accent: c                  # clúster del grafo: f · a · c · i · g · ghost
+pillar: academia           # pilar del portal: academia | industria | futuro
 status: available          # available | coming-soon
 tags: [RAG, embeddings]
 updated: 2026-07-05        # fecha del último cambio de contenido

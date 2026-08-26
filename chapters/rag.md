@@ -4,6 +4,7 @@ title: RAG
 subtitle: Retrieval-Augmented Generation — dando memoria a los modelos
 icon: fas fa-database
 accent: c
+pillar: academia
 status: available
 tags: [RAG, embeddings, vectorDB, arquitectura]
 updated: 2026-07-05
