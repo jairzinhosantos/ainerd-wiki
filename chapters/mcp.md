@@ -5,7 +5,7 @@ subtitle: Model Context Protocol — el protocolo que conecta modelos con el mun
 icon: fas fa-plug
 accent: i
 pillar: academia
-status: available
+status: coming-soon
 tags: [MCP, protocolo, herramientas, integración]
 updated: 2026-07-05
 ---

@@ -5,7 +5,7 @@ subtitle: Los fundamentos del paradigma que lo cambió todo
 icon: fas fa-microchip
 accent: f
 pillar: academia
-status: available
+status: coming-soon
 tags: [fundamentos, LLM, transformers]
 updated: 2026-07-05
 ---
