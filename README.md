@@ -1,49 +1,53 @@
-# AI Nerd Wiki — contenido
+# AI Nerd Wiki: content
 
-Capítulos de la [AI Nerd Wiki](https://jairzinhosantos.com/wiki), escritos en Markdown.
-Este directorio está pensado para convertirse en un repositorio público: cualquier
-persona puede proponer mejoras vía pull request; los cambios aprobados se publican
-automáticamente en el sitio.
+Chapters of the [AI Nerd Wiki](https://jairzinhosantos.com/wiki), written in Markdown.
+The site downloads this repository at build time and renders each published chapter
+as its own page.
 
-## Estructura
+## Status
+
+The wiki is in preparation. Every chapter in this repository is a draft
+(`status: coming-soon`) and stays unpublished until the author reviews and validates it.
+
+## Structure
 
 ```
 chapters/
-  <slug>.md      ← un capítulo por archivo; el nombre del archivo es el slug de la URL
+  <slug>.md      one chapter per file; the file name is the URL slug
 ```
 
-## Formato de un capítulo
+## Chapter format
 
-Cada archivo empieza con frontmatter YAML seguido del cuerpo en Markdown:
+Each file starts with YAML frontmatter, followed by the body in Markdown:
 
 ```markdown
 ---
-id: 2                      # orden en el índice
+id: 2                      # order in the index
 title: RAG
-subtitle: Una línea que resume el capítulo
-icon: fas fa-database      # icono Font Awesome
-accent: c                  # clúster del grafo: f · a · c · i · g · ghost
-pillar: academia           # pilar del portal: academia | industria | futuro
+subtitle: One line that sums up the chapter
+icon: fas fa-database      # Font Awesome icon
+accent: c                  # graph cluster: f · a · c · i · g · ghost
+pillar: academia           # portal pillar: academia | industria | futuro
 status: available          # available | coming-soon
 tags: [RAG, embeddings]
-updated: 2026-07-05        # fecha del último cambio de contenido
+updated: 2026-07-05        # date of the last content change
 ---
 
-## Primera sección…
+## First section
 ```
 
-Notas:
+Notes:
 
-- El **slug** (URL) sale del nombre del archivo: `rag.md` → `/wiki/rag`.
-- El **tiempo de lectura** se calcula automáticamente; no se declara.
-- `accent` enlaza el capítulo con su clúster en el grafo de la portada
-  (f = fundamentos, a = arquitecturas, c = capacidades, i = integración, g = sistemas).
-- Empieza el cuerpo en `##` (h2): el h1 lo pone la página con el título.
-- Soportado: Markdown GFM (tablas, listas de tareas), bloques de código con
-  resaltado (` ```python `) y diagramas Mermaid (` ```mermaid `).
+- The **slug** (URL) comes from the file name: `rag.md` becomes `/wiki/rag`.
+- **Reading time** is computed automatically; do not declare it.
+- `accent` links the chapter to its cluster in the home page graph
+  (f = foundations, a = architectures, c = capabilities, i = integration, g = systems).
+- `pillar` uses fixed keys: `academia` (Academy), `industria` (Industry), `futuro` (Future).
+- Start the body at `##` (h2): the page adds the h1 from the title.
+- Supported: GFM Markdown (tables, task lists), code blocks with syntax
+  highlighting (` ```python `) and Mermaid diagrams (` ```mermaid `).
 
-## Cómo contribuir
+## Publishing
 
-1. Haz un fork y edita o crea un capítulo en `chapters/`.
-2. Abre un pull request describiendo el cambio.
-3. Tras la revisión y el merge, el sitio se reconstruye y publica solo.
+A chapter appears on the site when its `status` is `available`. After a change is
+merged here, the site picks it up on its next build.
