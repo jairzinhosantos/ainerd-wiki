@@ -22,7 +22,7 @@ Para tareas amplias, una issue reúne alcance y aceptación. Un planner actualiz
 
 El contenido destinado al repositorio público debe ser apto para ese destino incluso si tiene status: draft. Los drafts en GitHub no son privados. Fuentes, explicación y resultados publicados deben poder entenderse sin acceso al cuaderno privado.
 
-Usar rama corta → PR → validación → revisión dentro de la autorización de la tarea → integración. El bootstrap de estructura no convierte los artículos en published. Cambiar a published requiere revisión técnica y aceptación editorial identificables en el PR.
+Usar rama corta → PR → validación → Review. Jairzinho revisa e integra el PR y mueve manualmente la tarjeta a Done; el agente se detiene en Review y no cierra la issue como completada. El bootstrap de estructura no convierte los artículos en published. Cambiar a published requiere revisión técnica y aceptación editorial identificables en el PR.
 
 Tras integrar, la wiki es la fuente mantenida. El estudio privado conserva el commit y PR resultantes; sus borradores pasan a antecedente, no a copia activa. La web se publica por un paso separado y verificable.
 
