@@ -1,0 +1,4 @@
+schema_version,source,target,relation
+1,context-assembly,harness,parent
+1,pi,context-assembly,related
+1,pi,harness,related
