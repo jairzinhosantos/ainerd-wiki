@@ -1,8 +1,8 @@
 # AI Nerd Wiki
 
-Conocimiento de ingeniería de sistemas de IA: conceptos, implementaciones, arquitecturas y pruebas conectados por sus fuentes. El primer recorrido es **Harness Engineering**.
+Conceptos, arquitecturas, tecnologías y laboratorios de sistemas de IA. Explicaciones, diagramas y pruebas conectados por sus fuentes. El primer recorrido es **Harness Engineering**.
 
-**Estado: estructura inicial y piloto editorial.** Los tres documentos iniciales son borradores de trabajo. Vamos a iterar con Jairzinho el tono, la prosa, la profundidad, los diagramas y la lectura antes de publicar artículos en la web. Incluyen fuentes primarias y una lectura estática de Pi en una revisión fija; siguen pendientes de aceptación y no constituyen un benchmark.
+*Estado editorial: [muestra en revisión](docs/editorial-pilot.md).*
 
 ## Primer recorrido
 
