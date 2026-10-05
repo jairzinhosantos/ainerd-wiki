@@ -23,6 +23,10 @@ Conocimiento de ingeniería de sistemas de IA: conceptos, implementaciones, arqu
 
 Las áreas se abren con contenido real. El [mapa de expansión](docs/structure.md) registra dónde crecer, sin crear un artículo vacío por cada término.
 
+## Gestión
+
+[Kanban y planificación](https://github.com/users/jairzinhosantos/projects/3) · [Modelo operativo](docs/project-management.md).
+
 ## Cómo participar y continuar
 
 Lee [CONTRIBUTING.md](CONTRIBUTING.md), el [flujo de trabajo](docs/workflow.md) y las [convenciones](docs/conventions.md). El trabajo de investigación puede empezar desde una conversación existente o directamente en un agente con acceso al workspace. La wiki pública no depende de archivos privados para poder leerse o compilarse.
