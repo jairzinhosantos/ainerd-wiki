@@ -1,53 +1,48 @@
-# AI Nerd Wiki: content
+# AI Nerd Wiki
 
-Chapters of the [AI Nerd Wiki](https://jairzinhosantos.com/wiki), written in Markdown.
-The site downloads this repository at build time and renders each published chapter
-as its own page.
+Conocimiento de ingeniería de sistemas de IA: conceptos, implementaciones, arquitecturas y pruebas conectados por sus fuentes. El primer recorrido es **Harness Engineering**.
 
-## Status
+**Estado: estructura inicial y piloto editorial.** Los tres documentos iniciales son borradores de trabajo. Vamos a iterar con Jairzinho el tono, la prosa, la profundidad, los diagramas y la lectura antes de publicar artículos en la web. No representan un estudio terminado ni una evaluación de frameworks.
 
-The wiki is in preparation. Every chapter in this repository is a draft
-(`status: coming-soon`) and stays unpublished until the author reviews and validates it.
+## Primer recorrido
 
-## Structure
+1. [Harness](concepts/harness/README.md): alcance, perspectivas y responsabilidades.
+2. [Ensamblaje de contexto](concepts/harness/context/context-assembly.md): la pregunta que conecta memoria, recuperación y llamada al modelo.
+3. [Pi](tech/pi/README.md): primera implementación que estudiaremos con una versión identificada.
 
+## Áreas de trabajo
+
+| Área | Responsabilidad |
+|---|---|
+| [Conceptos](concepts/README.md) | Explicaciones de mecanismos y perspectivas, independientes de productos. |
+| [Tecnologías](tech/README.md) | Componentes, versiones, decisiones y evidencia de implementaciones concretas. |
+| [Arquitecturas](architectures/README.md) | Patrones, composiciones y escenarios propios. |
+| [Comparativas](benchmarks/README.md) | Preguntas comparables, criterios, entradas conservadas y resultados. |
+| [Laboratorios](labs/README.md) | Código pequeño, instrucciones y evidencia ejecutada. |
+| [Catálogo](catalog/README.md) | Páginas y relaciones generadas; incluye el estado editorial. |
+
+Las áreas se abren con contenido real. El [mapa de expansión](docs/structure.md) registra dónde crecer, sin crear un artículo vacío por cada término.
+
+## Cómo participar y continuar
+
+Lee [CONTRIBUTING.md](CONTRIBUTING.md), el [flujo de trabajo](docs/workflow.md) y las [convenciones](docs/conventions.md). El trabajo de investigación puede empezar desde una conversación existente o directamente en un agente con acceso al workspace. La wiki pública no depende de archivos privados para poder leerse o compilarse.
+
+Las decisiones de tono y diseño siguen abiertas en el [piloto editorial](docs/editorial-pilot.md). [Cambios](log.md).
+
+## Validación local
+
+Python 3.11 o posterior:
+
+```sh
+python3 -m venv .venv
+.venv/bin/python -m pip install -r requirements-dev.txt
+.venv/bin/python scripts/catalog.py
+.venv/bin/python scripts/check.py
+.venv/bin/python -m unittest discover -s tests -v
 ```
-chapters/
-  <slug>.md      one chapter per file; the file name is the URL slug
-```
 
-## Chapter format
+El catálogo no se edita a mano. CI comprueba enlaces, metadatos, identidades, relaciones y sincronización; no certifica la veracidad de una afirmación ni llama a modelos.
 
-Each file starts with YAML frontmatter, followed by the body in Markdown:
+## Conexión con la web
 
-```markdown
----
-id: 2                      # order in the index
-title: RAG
-subtitle: One line that sums up the chapter
-icon: fas fa-database      # Font Awesome icon
-accent: c                  # graph cluster: f · a · c · i · g · ghost
-pillar: academia           # portal pillar: academia | industria | futuro
-status: available          # available | coming-soon
-tags: [RAG, embeddings]
-updated: 2026-07-05        # date of the last content change
----
-
-## First section
-```
-
-Notes:
-
-- The **slug** (URL) comes from the file name: `rag.md` becomes `/wiki/rag`.
-- **Reading time** is computed automatically; do not declare it.
-- `accent` links the chapter to its cluster in the home page graph
-  (f = foundations, a = architectures, c = capabilities, i = integration, g = systems).
-- `pillar` uses fixed keys: `academia` (Academy), `industria` (Industry), `futuro` (Future).
-- Start the body at `##` (h2): the page adds the h1 from the title.
-- Supported: GFM Markdown (tables, task lists), code blocks with syntax
-  highlighting (` ```python `) and Mermaid diagrams (` ```mermaid `).
-
-## Publishing
-
-A chapter appears on the site when its `status` is `available`. After a change is
-merged here, the site picks it up on its next build.
+El sitio actual aún utiliza `chapters/`. Esa carpeta se conserva temporalmente como compatibilidad de solo mantenimiento: no recibe contenido nuevo. Los nuevos borradores no están conectados al renderizador actual. La [migración web](docs/migration.md) define la transición y sus criterios de aceptación.

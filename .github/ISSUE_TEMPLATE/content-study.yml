@@ -1,0 +1,22 @@
+name: Estudio o mejora de contenido
+description: Definir una pregunta y su resultado verificable
+title: "[study] "
+body:
+  - type: textarea
+    id: question
+    attributes:
+      label: Pregunta y alcance
+      description: Qué queremos entender; qué queda fuera.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Páginas y fuentes iniciales
+  - type: textarea
+    id: acceptance
+    attributes:
+      label: Resultado y criterio de cierre
+      description: Explicación, comparación o prueba; feedback editorial necesario.
+    validations:
+      required: true
