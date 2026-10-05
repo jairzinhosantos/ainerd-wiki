@@ -2,7 +2,9 @@
 
 Guía provisional. La voz y el lenguaje visual se encontrarán trabajando las mismas piezas con Jairzinho; no se consideran fijados por este bootstrap.
 
-Una página empieza por la pregunta y una explicación útil. Desarrolla mecanismo, fronteras y fuentes en prosa conectada. Su portada explica el conjunto; las páginas hijas profundizan cuando hay contenido suficiente. Evitar una entrada de glosario por cada término.
+Una página empieza por una definición o explicación directa. El título nombra el tema: «Harness», «Ensamblaje de contexto», «Pi». Los encabezados identifican el contenido de la sección, sin subtítulos promocionales, metáforas ni preguntas retóricas. Desarrolla mecanismo, fronteras y fuentes en prosa conectada. Su portada explica el conjunto; las páginas hijas profundizan cuando hay contenido suficiente. Evitar una entrada de glosario por cada término.
+
+La concisión corresponde a títulos y orientación; las explicaciones necesitan profundidad. Describir qué ocurre, con qué información, qué componente decide, qué estado cambia y qué sucede ante un fallo. Usar ejemplos continuos para explicar dependencias y consecuencias. Una enumeración de capacidades no sustituye ese desarrollo. Reducir frases que anuncian el recorrido o repiten cómo leer el artículo. Conservar las atribuciones y los límites concretos de evidencia, sin repetir una advertencia general después de cada párrafo.
 
 Usar Mermaid para diagramas sencillos. Draw.io y SVG cuando se necesite control visual; conservar fuente y exportación juntas. Comparativas estáticas e interactivas usarán datos identificados. Los resultados ficticios se rotulan como ejemplos y nunca como mediciones.
 

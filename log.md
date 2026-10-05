@@ -2,7 +2,7 @@
 
 ## 2026-10-05
 
-Se desarrolla el primer recorrido de harness, ensamblaje de contexto y Pi con 18 diagramas Mermaid y fuentes primarias. El perfil de Pi fija un commit y diferencia inspección de código de ejecución. Las páginas siguen en draft, con reviewed pendiente; la guía visual exige progresión y evidencia por figura.
+Se desarrolla el primer recorrido de harness, ensamblaje de contexto y Pi con 18 diagramas Mermaid y fuentes primarias. El perfil de Pi fija un commit y diferencia inspección de código de ejecución. Se simplifican títulos y encabezados y se amplían las explicaciones de control, contexto y recuperación según el feedback editorial. Las páginas siguen en draft, con reviewed pendiente; la guía visual exige progresión y evidencia por figura.
 
 ## 2026-10-04
 

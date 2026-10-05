@@ -1,6 +1,6 @@
 # Piloto editorial
 
-Estado: primera iteración sustantiva preparada para revisión; aceptación editorial pendiente.
+Estado: ajuste de tono y profundidad preparado para revisión; aceptación editorial pendiente.
 
 ## Muestra
 
@@ -22,6 +22,10 @@ Trabajaremos sobre harness, ensamblaje de contexto y un perfil de Pi. Una secuen
 Proponer variantes acotadas sobre un mismo fragmento. Registrar en el PR la variante, feedback y decisión. Git conserva las anteriores. No llenar el resto del mapa ni congelar templates hasta que esta muestra permita acordar una guía.
 
 El piloto termina cuando Jairzinho acepta la muestra y podemos actualizar una observación sin duplicar cambios en artículos y gráficos. No implica haber estudiado todo el harness.
+
+## Dirección editorial
+
+Feedback de Jairzinho del 2026-10-05: títulos concretos y puntuales, sin subtítulos adornados; mayor densidad en las explicaciones, tomando el estudio previo como referencia. Se aplicó a los mismos tres artículos: definición directa, encabezados descriptivos y desarrollo de mecanismos, dependencias, ejemplos y fallos. Se conservan los 18 diagramas. La voz sigue en calibración.
 
 ## Comprobaciones de esta iteración
 

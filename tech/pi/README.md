@@ -1,6 +1,6 @@
 ---
 id: pi
-title: "Pi: seguir el contexto desde la sesión hasta el modelo"
+title: "Pi"
 summary: "Lectura de una revisión concreta: paquetes, proyección de sesión, extensiones, conversión de mensajes y continuidad del loop."
 type: technology
 status: draft
@@ -19,13 +19,13 @@ sources:
   - https://github.com/earendil-works/pi/blob/b2b5c42f6138b73ec4b2f49ec0ca468800f88586/packages/coding-agent/src/core/agent-session.ts
 ---
 
-# Pi: seguir el contexto desde la sesión hasta el modelo
+# Pi
 
-¿Cómo se convierte una sesión guardada en los mensajes de la siguiente llamada? Esta pregunta abre un recorrido concreto por Pi y permite contrastar [el ensamblaje de contexto](../../concepts/harness/context/context-assembly.md) con código, sin equiparar la definición general de [harness](../../concepts/harness/README.md) con un producto.
+Pi se presenta como un harness extensible. Esta lectura examina cómo conecta la sesión del agente de programación, el bucle de ejecución y la interfaz de modelos. El foco es [el ensamblaje de contexto](../../concepts/harness/context/context-assembly.md): qué información se recupera de la sesión, cómo intervienen las extensiones y qué mensajes llegan a la función de streaming.
 
 > Revisión examinada: `b2b5c42f6138b73ec4b2f49ec0ca468800f88586`, rama `main`, consultada el 2026-10-05. Los manifiestos de [pi-agent-core](https://github.com/earendil-works/pi/blob/b2b5c42f6138b73ec4b2f49ec0ca468800f88586/packages/agent/package.json) y [pi-coding-agent](https://github.com/earendil-works/pi/blob/b2b5c42f6138b73ec4b2f49ec0ca468800f88586/packages/coding-agent/package.json) declaran `1.0.2`; el commit, no esa cadena, fija esta lectura. Se inspeccionaron documentación y código. No se instaló ni ejecutó Pi, no se llamó a modelos y no se midió rendimiento. Borrador pendiente de revisión editorial y técnica por otra persona.
 
-## 1. Qué estamos inspeccionando
+## 1. Componentes
 
 El [README de esa revisión](https://github.com/earendil-works/pi/blob/b2b5c42f6138b73ec4b2f49ec0ca468800f88586/README.md#packages) presenta Pi como un harness extensible y enumera varios paquetes. Para esta pregunta interesan el agente de programación, el núcleo del agente y la API de modelos. La figura recorta ese recorrido y deja fuera los componentes que esta lectura no examina.
 
@@ -41,9 +41,9 @@ flowchart TD
 
 **Figura 1 · Vista parcial de composición.** Las flechas continuas resumen la composición examinada; las discontinuas muestran aportaciones mediadas por la configuración del SDK. Se omiten TUI, telemetría, componentes de durabilidad y otros paquetes. No son por ello capacidades ausentes.
 
-El sitio puede describir posibilidades del producto; para localizar una responsabilidad usaremos enlaces al commit. Tampoco asumiremos que un ejemplo de extensión sea una capacidad activa por defecto.
+La separación permite localizar una modificación. Cambiar la reconstrucción de una sesión afecta al agente de programación; intervenir antes de la llamada utiliza los hooks conectados al núcleo; adaptar el intercambio con un proveedor corresponde al recorrido de modelos. Una extensión puede conectar esas responsabilidades, pero su efecto depende del punto donde se instala y de la configuración activa.
 
-## 2. De entradas persistidas a mensajes activos
+## 2. Proyección de sesión
 
 En `sdk.ts`, la creación de sesión obtiene `existingSession` con `sessionManager.buildSessionContext()` y usa sus mensajes al inicializar `Agent`. La reconstrucción tiene etapas propias dentro de `session-manager.ts`.
 
@@ -61,9 +61,11 @@ flowchart TD
 
 `buildContextEntries` utiliza el camino de la hoja activa. Cuando encuentra compactación, conserva la más reciente como referencia y combina entradas retenidas y posteriores. `buildSessionProjection` aplica además las ediciones de contexto pertinentes y proyecta las entradas a mensajes. No envía indiscriminadamente todas las ramas del historial al modelo.
 
-La consecuencia conceptual es importante: **la sesión persistida y la conversación activa son objetos diferentes**. El hecho de conservar un dato no implica que esté presente en la próxima llamada. Este código muestra cómo se hace una selección; no prueba que preserve toda la información necesaria para cualquier tarea.
+**La sesión persistida y la conversación activa son objetos diferentes.** El hecho de conservar un dato no implica que esté presente en la próxima llamada. La hoja activa determina el recorrido que se reconstruye; una rama alternativa puede conservarse en la sesión sin participar en esos mensajes. La compactación modifica la representación de ese recorrido y las ediciones de contexto intervienen en la proyección posterior.
 
-## 3. El punto en que las extensiones cambian la llamada
+Para depurar una omisión hay que localizar en qué etapa ocurrió. Una entrada puede quedar fuera por pertenecer a otra rama, por la selección asociada a compactación o por una edición de contexto. Inspeccionar solo el archivo persistido no explica cuál de esas representaciones usó el agente. Esta es una consecuencia del flujo de código, no una medición de la calidad de la selección.
+
+## 3. Transformación y conversión
 
 Dentro del loop, `streamAssistantResponse` aplica `transformContext`, llama a `convertToLlm`, normaliza el contexto y utiliza `streamFunction`. El SDK conecta `transformContext` con `runner.emitContext(messages)` cuando existe un runner de extensiones.
 
@@ -88,7 +90,11 @@ Hay una precisión que se perdería en un diagrama genérico de «hook de contex
 
 Por otro lado, [`convertToLlm`](https://github.com/earendil-works/pi/blob/b2b5c42f6138b73ec4b2f49ec0ca468800f88586/packages/coding-agent/src/core/messages.ts#L148) trata roles propios del agente. Convierte resúmenes de rama y compactación a mensajes para el modelo y excluye determinadas ejecuciones de bash marcadas fuera del contexto. **Seleccionar información, transformar la conversación y convertir su formato son responsabilidades distintas**, aunque participen de una misma llamada.
 
-## 4. Qué prepara la siguiente iteración
+`emitContext` empieza con una copia mediante `structuredClone`. Los handlers de `context` reciben mensajes sin el rol `system` y pueden devolver una lista o modificar la recibida; después se restauran los mensajes de sistema. La fase `context_with_system` trabaja sobre el conjunto completo. Si elimina el mensaje de sistema inicial, el código emite un error, pero conserva la salida del handler. Por tanto, esa señal de diagnóstico no equivale a bloquear o reparar automáticamente la transformación. [Código: `emitContext`](https://github.com/earendil-works/pi/blob/b2b5c42f6138b73ec4b2f49ec0ca468800f88586/packages/coding-agent/src/core/extensions/runner.ts#L1298).
+
+El orden también determina qué datos puede interpretar una extensión. Antes de `convertToLlm` todavía existen los roles propios del agente; después, algunos se han convertido en mensajes de usuario o se han excluido. Una política que necesite distinguir una ejecución de bash de un resumen debe intervenir donde esa identidad esté disponible. Modificar la representación de la llamada tampoco demuestra que se haya reescrito la sesión persistida: son operaciones con alcances diferentes.
+
+## 4. Continuidad del bucle
 
 La inspección del loop muestra preparación de request, llamada al modelo, tratamiento de herramientas y decisión de continuidad. Entre turnos también pueden refrescarse contexto y configuración.
 
@@ -110,9 +116,11 @@ flowchart TD
 
 El despacho de herramientas selecciona ejecución secuencial o paralela según la configuración y el modo de las herramientas. No se puede deducir del diagrama que una llamada se ejecute siempre después de la anterior. La sesión instala además un hook que puede compactar antes de la próxima respuesta y refrescar prompt, herramientas y modelo. [Fuentes: `executeToolCalls`](https://github.com/earendil-works/pi/blob/b2b5c42f6138b73ec4b2f49ec0ca468800f88586/packages/agent/src/agent-loop.ts#L508) y [`_installAgentNextTurnRefresh`](https://github.com/earendil-works/pi/blob/b2b5c42f6138b73ec4b2f49ec0ca468800f88586/packages/coding-agent/src/core/agent-session.ts#L870).
 
-El alcance de estas observaciones es estático: localizan ramas de control y puntos de extensión. No garantizan recuperación durable de cualquier efecto externo ni prueban latencia, fiabilidad o calidad de razonamiento.
+`runLoop` distingue mensajes de dirección (*steering*) durante el trabajo y mensajes de seguimiento (*follow-up*) cuando el agente iba a detenerse. Además, `finishTurn` puede indicar fin o continuación explícita. Terminar una respuesta del modelo no decide por sí solo el fin del agente: intervienen herramientas, colas y hooks. Para `error` o `aborted`, existe una ruta que finaliza el turno y emite `agent_end`.
 
-## 5. Qué sabemos y qué falta probar
+Otra decisión concreta aparece cuando la respuesta termina por límite de longitud: si contiene solicitudes de herramientas, el loop las trata como fallidas en vez de ejecutar argumentos posiblemente truncados. Este control actúa antes del efecto en el entorno. Localiza una protección específica en esa revisión; no implica que toda solicitud válida esté autorizada para cualquier escenario. [Código: `runLoop`](https://github.com/earendil-works/pi/blob/b2b5c42f6138b73ec4b2f49ec0ca468800f88586/packages/agent/src/agent-loop.ts#L163).
+
+## 5. Evidencia y pruebas pendientes
 
 | Pregunta | Evidencia en esta revisión | Límite |
 |---|---|---|
