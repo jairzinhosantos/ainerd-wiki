@@ -12,3 +12,5 @@ Lee primero README.md y docs/workflow.md. Aplica docs/conventions.md y docs/writ
 - Cambios en ramas cortas y PRs; ejecuta scripts/check.py y las pruebas pertinentes. Para cambios de páginas, regenera el catálogo. No actives schedulers o llamadas de pago por el hecho de ejecutar CI.
 - chapters/ es compatibilidad temporal. Sigue docs/migration.md antes de retirarla.
 - No mantengas dos autores escribiendo simultáneamente el mismo archivo. Registra siguiente paso y dudas al cerrar una sesión.
+
+- Consulta docs/project-management.md. Vincula la issue al Project, actualiza su estado al iniciar y al presentar revisión, y registra fechas reales y evidencia antes de cerrar.

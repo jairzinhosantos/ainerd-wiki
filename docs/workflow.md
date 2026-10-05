@@ -6,6 +6,8 @@ Una conversación previa se entrega como texto o archivo y se clasifica en un ex
 
 El notebook privado conserva pregunta, alcance, revisión base de la wiki, fuentes, análisis, revisión y siguiente paso. Un chat sirve de entrada; no sustituye el estudio ni se copia automáticamente a este repositorio público.
 
+El [modelo de gestión](project-management.md) conecta ideas, issues, PRDs breves, Kanban y PRs. El estado se mantiene en GitHub Projects.
+
 ## Elaboración
 
 1. Identificar qué existe y la pregunta que falta resolver.
