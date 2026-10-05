@@ -12,11 +12,13 @@ Idea → issue → Backlog → To do → In progress → Review → Done.
 | To do | Resultado, alcance y aceptación claros; dependencias resueltas. |
 | In progress | Hay trabajo activo. Registrar Start date al empezar. |
 | Review | Existe un resultado revisable con evidencia, límites y PR cuando corresponde. |
-| Done | Criterios cumplidos, evidencia enlazada e integración completada cuando corresponde. Registrar Completed date y cerrar la issue. |
+| Done | Jairzinho revisó y aceptó el resultado, integró el PR cuando corresponde y movió manualmente la tarjeta. Solo él registra Completed date y decide el cierre de la issue. |
+
+**El agente llega como máximo a Review.** Prepara el PR y sus comprobaciones; no lo fusiona, no habilita auto-merge, no cierra issues como completadas ni asigna Completed date. La revisión, integración y transición manual a Done corresponden a Jairzinho.
 
 Una revisión puede devolver trabajo a In progress. Una tarea bloqueada conserva su estado y registra causa, dependencia y siguiente acción en la issue. No abrir otra tarjeta para representar el mismo trabajo. WIP inicial: una tarea técnica y un estudio editorial.
 
-El Project es la fuente del estado; la issue es la fuente de alcance y aceptación; el PR contiene cambios y validación. No duplicar el backlog en Markdown. Vincular los PRs a su issue y mover la tarjeta al iniciar y al presentar resultados. Cerrar como no planificada una idea descartada no equivale a validar su hipótesis.
+El Project es la fuente del estado; la issue es la fuente de alcance y aceptación; el PR contiene cambios y validación. No duplicar el backlog en Markdown. Vincular los PRs a su issue y mover la tarjeta al iniciar y al presentar resultados. Una idea descartada se presenta a Jairzinho para que decida su cierre; descartarla no equivale a validar su hipótesis.
 
 ## Issue o PRD
 
@@ -38,10 +40,10 @@ Start date y Completed date son hechos. Target date es una previsión revisable,
 
 ## Revisión e integración
 
-Rama corta → PR → checks → revisión → integración. En wiki y notebook la base es main. En la web se conserva development para integración hasta acordar la promoción a main; un PR a una rama no predeterminada referencia la issue y su cierre se verifica explícitamente.
+Rama corta → PR → checks → Review → revisión e integración por Jairzinho → Done manual. En wiki y notebook la base es main. En la web se conserva development para integración hasta acordar la promoción a main; un PR a una rama no predeterminada referencia la issue y su cierre se verifica explícitamente.
 
-Un merge técnico no acepta automáticamente el tono, una conclusión de investigación ni la publicación del sitio. Las tareas amplias con validación posterior permanecen abiertas. Los PRs parciales usan Refs; Closes solo cuando el cambio satisface toda la aceptación y su integración debe cerrar la issue.
+Un merge técnico no acepta automáticamente el tono, una conclusión de investigación ni la publicación del sitio. Las tareas amplias con validación posterior permanecen abiertas. Los PRs usan Refs para enlazar la issue sin provocar su cierre automático. No usar Closes, Fixes o Resolves para automatizar el cierre.
 
-Revisar prioridades al retomar una sesión y registrar el siguiente paso al terminar. Las automatizaciones nativas del tablero pueden acompañar eventos de issues y PRs; no sustituyen comprobar aceptación ni autorizan estudios o despliegues. No se ha programado investigación recurrente.
+Revisar prioridades al retomar una sesión y registrar el siguiente paso al terminar. Las automatizaciones Auto-close issue, Item closed y Pull request merged están desactivadas. Ningún evento de PR, cierre de issue o check debe mover tarjetas a Done ni sustituir la revisión manual. Se mantienen la entrada en Backlog y los vínculos de trabajo; no autorizan estudios o despliegues. No se ha programado investigación recurrente.
 
 Referencia: [GitHub Projects](https://docs.github.com/en/issues/planning-and-tracking-with-projects/learning-about-projects/about-projects).
