@@ -1,4 +1,4 @@
 schema_version,id,title,type,status,path,updated,reviewed
-1,context-assembly,Ensamblaje de contexto,concept,draft,concepts/harness/context/context-assembly.md,2026-10-04,
-1,harness,Harness,concept,draft,concepts/harness/README.md,2026-10-04,
-1,pi,Pi,technology,draft,tech/pi/README.md,2026-10-04,
+1,context-assembly,Ensamblaje de contexto: construir la siguiente llamada,concept,draft,concepts/harness/context/context-assembly.md,2026-10-05,
+1,harness,Harness: del modelo al sistema que actúa,concept,draft,concepts/harness/README.md,2026-10-05,
+1,pi,Pi: seguir el contexto desde la sesión hasta el modelo,technology,draft,tech/pi/README.md,2026-10-05,

@@ -1,4 +1,7 @@
 schema_version,source,target,relation
 1,context-assembly,harness,parent
+1,context-assembly,pi,related
+1,harness,context-assembly,related
+1,harness,pi,related
 1,pi,context-assembly,related
 1,pi,harness,related

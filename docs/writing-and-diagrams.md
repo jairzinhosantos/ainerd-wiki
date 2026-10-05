@@ -9,3 +9,13 @@ Usar Mermaid para diagramas sencillos. Draw.io y SVG cuando se necesite control 
 No fijar colores de marca, densidad ni plantilla definitiva antes del piloto. Evaluar lectura parcial, tamaño de texto, móvil, accesibilidad, leyendas y la relación entre figura y argumento. El texto debe poder leerse también en GitHub.
 
 Se permite publicar una pregunta abierta o hipótesis explicitada. Se bloquean afirmaciones presentadas como hechos cuando siguen sin verificar; un checker no sustituye esa revisión humana.
+
+## Recorrido visual progresivo
+
+Cada lectura desarrolla una secuencia de explicaciones y diagramas; no se limita a una figura ni aplica una cuota fija. Empezar con relaciones o ideas, abrir un flujo, mostrar interacciones en el tiempo y llegar a una arquitectura cuando la pregunta lo requiera. Mantener un ejemplo que conecte las vistas.
+
+Cada figura tiene una pregunta, un pie que explica cómo leerla y un nivel de evidencia: síntesis conceptual, arquitectura propuesta o flujo derivado de código con revisión. Explicar las flechas y distinguir datos, control, dependencia y cronología. Una caja no implica un servicio ni una capa universal. La prosa prepara la figura y desarrolla lo que permite concluir.
+
+Mermaid admite también secuencias, estados y arquitecturas moderadas. Si el layout dificulta la lectura, dividir la vista por responsabilidad; para composición de mayor precisión usar Draw.io con fuente y exportación. No añadir nodos para aparentar profundidad. Validar sintaxis y renderizado, revisar etiquetas y legibilidad. En móvil, las vistas densas deben poder ampliarse o desplazarse sin reducir el texto hasta volverlo ilegible.
+
+El primer recorrido conecta harness, ensamblaje de contexto y Pi. Los borradores y esta guía continúan sujetos a la revisión de Jairzinho; el número de figuras no constituye aceptación editorial.
