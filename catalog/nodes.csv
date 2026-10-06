@@ -1,5 +1,6 @@
 schema_version,id,title,type,status,path,updated,reviewed
 1,context-assembly,Ensamblaje de contexto,concept,draft,concepts/harness/context/context-assembly.md,2026-10-05,
 1,harness,Harness,concept,draft,concepts/harness/README.md,2026-10-05,
+1,harness-definitions-comparison,Definiciones y alcance de harness,comparison,draft,benchmarks/2026-10-harness-definitions/README.md,2026-10-05,
 1,language-model,Modelo de lenguaje grande,concept,draft,concepts/models/language-models.md,2026-10-05,
 1,pi,Pi,technology,draft,tech/pi/README.md,2026-10-05,

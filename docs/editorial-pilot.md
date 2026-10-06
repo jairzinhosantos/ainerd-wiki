@@ -17,6 +17,10 @@ La comparación es cualitativa, para un contenido equivalente; no es una medici�
 
 La dirección de tono toma como referencia la separación de responsabilidades en [OpenAI](https://developers.openai.com/api/docs/guides/agents/sandboxes) y las distinciones operativas de [LangGraph](https://docs.langchain.com/oss/python/langgraph/persistence): definición, mecanismo, condiciones y consecuencias. Se busca prosa técnica de revisión, con afirmaciones delimitadas y fuentes próximas. La muestra es una síntesis documental; no presenta resultados experimentales propios.
 
+## Comparación de definiciones
+
+La [revisión de 27 proyectos y perspectivas de sus autores](../benchmarks/2026-10-harness-definitions/README.md) amplía la base conceptual a Anthropic y proyectos abiertos. Conserva divergencias, distingue autodescripciones de definiciones y propone una síntesis pendiente de decisión. La muestra siguiente sigue provisional.
+
 ## Muestra propuesta
 
 <!-- tone-sample:start -->

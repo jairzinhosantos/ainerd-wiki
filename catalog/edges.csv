@@ -3,6 +3,9 @@ schema_version,source,target,relation
 1,context-assembly,pi,related
 1,harness,context-assembly,related
 1,harness,pi,related
+1,harness-definitions-comparison,context-assembly,related
+1,harness-definitions-comparison,harness,related
+1,harness-definitions-comparison,pi,related
 1,language-model,context-assembly,related
 1,language-model,harness,related
 1,pi,context-assembly,related
