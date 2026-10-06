@@ -4,15 +4,15 @@
 
 Una conversación previa se entrega como texto o archivo y se clasifica en un expediente de estudio privado. Una investigación directa comienza leyendo esta wiki y abriendo o retomando ese expediente. Ambos caminos continúan con fuentes primarias, análisis, comprobaciones y borradores.
 
-El notebook privado conserva pregunta, alcance, revisión base de la wiki, fuentes, análisis, revisión y siguiente paso. Un chat sirve de entrada; no sustituye el estudio ni se copia automáticamente a este repositorio público.
+El notebook privado conserva chats, material no publicable y notas iniciales. Los barridos comparativos aptos para publicación se mantienen directamente en benchmarks/; sus fuentes y observaciones no se duplican en el notebook. Este conserva el enlace y revisión de la wiki cuando corresponda. Un chat sirve de entrada; no sustituye el estudio ni se copia automáticamente a este repositorio público.
 
 El [modelo de gestión](project-management.md) conecta ideas, issues, PRDs breves, Kanban y PRs. El estado se mantiene en GitHub Projects.
 
 ## Elaboración
 
 1. Identificar qué existe y la pregunta que falta resolver.
-2. Contrastar fuentes y versiones; separar afirmación atribuida, síntesis propia, hipótesis y resultado ejecutado.
-3. Preparar la explicación y el diagrama. Añadir pruebas solo cuando la conclusión las necesite.
+2. Contrastar fuentes y versiones según la [política de referencias](references.md); separar afirmación atribuida, síntesis propia, hipótesis y resultado ejecutado.
+3. Preparar el recorrido explicativo y sus diagramas progresivos. Añadir pruebas solo cuando la conclusión las necesite.
 4. Iterar con Jairzinho la prosa, profundidad y visuales, conforme al piloto editorial.
 5. Preparar un cambio sobre la revisión actual de la wiki; comparar contra la revisión base para no sobrescribir trabajo posterior.
 
@@ -31,3 +31,7 @@ Tras integrar, la wiki es la fuente mantenida. El estudio privado conserva el co
 Al cerrar una sesión registrar qué cambió, dudas, fuentes pendientes y próximo paso en el expediente. Otra herramienta continúa leyendo esos archivos. Una corrección pública pequeña puede hacerse directamente en una rama sin abrir un estudio completo.
 
 La automatización se evaluará según docs/research-automation-plan.md. No hay scheduler ni servicio de investigación activado.
+
+## Comparación y concepto
+
+Un estudio documental concluye en coincidencias y diferencias, con referencias y diagramas atribuibles. La definición adoptada se trabaja después en concepts/ y enlaza el estudio y su commit. Una actualización de evidencia identifica qué conclusiones podría afectar; no cambia automáticamente la definición ni el estado de revisión.

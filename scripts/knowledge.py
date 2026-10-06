@@ -8,6 +8,7 @@ from pathlib import Path
 import re
 from urllib.parse import unquote, urlsplit
 import yaml
+from evidence import load_evidence, check_bibliography
 
 ROOTS = ('concepts', 'tech', 'architectures', 'benchmarks', 'labs')
 TYPES = {'concept', 'technology', 'architecture', 'comparison', 'benchmark', 'lab'}
@@ -84,6 +85,17 @@ def read_pages(root):
             if meta.get('reviewed') is not None and not iso_date(meta['reviewed']):
                 issues.append('reviewed debe ser fecha ISO entre comillas o null')
             sources = meta.get('sources', [])
+            if 'evidence' in meta:
+                try:
+                    if meta['evidence'] != 'observations.json' or meta.get('type') not in {'comparison', 'benchmark'}:
+                        raise ValueError('evidence solo admite observations.json en comparativas')
+                    if 'sources' in meta:
+                        raise ValueError('usar evidence o sources, no ambos')
+                    evidence = load_evidence(path.parent / 'observations.json')
+                    check_bibliography(body, evidence)
+                    sources = [source['url'] for source in evidence['sources']]
+                except (OSError, ValueError, TypeError) as exc:
+                    issues.append(f'evidencia inválida: {exc}')
             if not isinstance(sources, list) or any(not isinstance(x, str) or urlsplit(x).scheme not in {'http', 'https'} or not urlsplit(x).netloc for x in sources):
                 issues.append('sources debe ser una lista de URLs http(s)')
             if re.findall(r'^# (.+)$', prose(body), flags=re.M) != [meta.get('title')]:
@@ -159,7 +171,7 @@ def validate_snapshots(root, pages):
     errors = []
     for page in pages:
         meta = page['meta']
-        if meta['status'] != 'published' or meta['type'] not in {'comparison', 'benchmark'}:
+        if meta['type'] not in {'comparison', 'benchmark'} or (meta['status'] != 'published' and 'evidence' not in meta):
             continue
         directory = (root / page['path']).parent
         try:
@@ -167,9 +179,11 @@ def validate_snapshots(root, pages):
             observations = json.loads((directory / 'observations.json').read_text())
             if not isinstance(manifest, dict) or not iso_date(manifest.get('cutoff')):
                 raise ValueError('manifest requiere cutoff ISO')
+            if 'evidence' in meta:
+                observations = load_evidence(directory / 'observations.json')['observations']
             if not isinstance(observations, list) or not observations:
                 raise ValueError('observations debe contener observaciones')
-            for obs in observations:
+            for obs in ([] if 'evidence' in meta else observations):
                 if not isinstance(obs, dict):
                     raise ValueError('observación inválida')
                 for key in ('id', 'technology', 'component', 'examined_ref', 'claim', 'source', 'scope'):

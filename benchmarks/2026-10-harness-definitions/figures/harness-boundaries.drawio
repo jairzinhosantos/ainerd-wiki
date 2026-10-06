@@ -1,0 +1,98 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Fronteras del harness" id="harness-boundaries">
+    <mxGraphModel page="1" pageWidth="1240" pageHeight="730">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Fronteras del harness" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=30;fontColor=#18304b;fontStyle=1;spacing=0;">
+          <mxGeometry as="geometry" x="40" y="22" width="1180" height="37" />
+        </mxCell>
+        <mxCell id="3" value="Tres pasajes documentales; las cajas muestran alcances distintos." parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=17;fontColor=#53657a;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="40" y="71" width="1180" height="24" />
+        </mxCell>
+        <mxCell id="4" parent="1" vertex="1" style="rounded=1;fillColor=#f3f7fc;strokeColor=#4e789f;strokeWidth=2;">
+          <mxGeometry as="geometry" x="40" y="130" width="360" height="345" />
+        </mxCell>
+        <mxCell id="5" value="Anthropic · Managed Agents" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=22;fontColor=#18304b;fontStyle=1;spacing=0;">
+          <mxGeometry as="geometry" x="60" y="145" width="1160" height="29" />
+        </mxCell>
+        <mxCell id="6" value="Dentro del harness" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="60" y="189" width="1160" height="26" />
+        </mxCell>
+        <mxCell id="7" value="Bucle: modelo y herramientas" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="60" y="218" width="1160" height="26" />
+        </mxCell>
+        <mxCell id="8" value="" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="60" y="247" width="1160" height="26" />
+        </mxCell>
+        <mxCell id="9" value="Componentes separados" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="60" y="276" width="1160" height="26" />
+        </mxCell>
+        <mxCell id="10" value="Sesión" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="60" y="305" width="1160" height="26" />
+        </mxCell>
+        <mxCell id="11" value="Sandbox" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="60" y="334" width="1160" height="26" />
+        </mxCell>
+        <mxCell id="12" parent="1" vertex="1" style="rounded=1;fillColor=#f0faf7;strokeColor=#40836e;strokeWidth=2;">
+          <mxGeometry as="geometry" x="440" y="130" width="360" height="345" />
+        </mxCell>
+        <mxCell id="13" value="LangChain · Anatomía" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=22;fontColor=#18304b;fontStyle=1;spacing=0;">
+          <mxGeometry as="geometry" x="460" y="145" width="760" height="29" />
+        </mxCell>
+        <mxCell id="14" value="Alcance ampliado" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="460" y="189" width="760" height="26" />
+        </mxCell>
+        <mxCell id="15" value="Código y configuración" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="460" y="218" width="760" height="26" />
+        </mxCell>
+        <mxCell id="16" value="Lógica de ejecución" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="460" y="247" width="760" height="26" />
+        </mxCell>
+        <mxCell id="17" value="Herramientas" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="460" y="276" width="760" height="26" />
+        </mxCell>
+        <mxCell id="18" value="Infraestructura" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="460" y="305" width="760" height="26" />
+        </mxCell>
+        <mxCell id="19" parent="1" vertex="1" style="rounded=1;fillColor=#fff8ee;strokeColor=#b27a38;strokeWidth=2;">
+          <mxGeometry as="geometry" x="840" y="130" width="360" height="345" />
+        </mxCell>
+        <mxCell id="20" value="Cursor · Prácticas" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=22;fontColor=#18304b;fontStyle=1;spacing=0;">
+          <mxGeometry as="geometry" x="860" y="145" width="360" height="29" />
+        </mxCell>
+        <mxCell id="21" value="Componentes presentados" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="860" y="189" width="360" height="26" />
+        </mxCell>
+        <mxCell id="22" value="Instrucciones" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="860" y="218" width="360" height="26" />
+        </mxCell>
+        <mxCell id="23" value="Herramientas" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="860" y="247" width="360" height="26" />
+        </mxCell>
+        <mxCell id="24" value="Modelo" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="860" y="276" width="360" height="26" />
+        </mxCell>
+        <mxCell id="25" value="" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="860" y="305" width="360" height="26" />
+        </mxCell>
+        <mxCell id="26" value="Ajustados para cada modelo" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="860" y="334" width="360" height="26" />
+        </mxCell>
+        <mxCell id="27" parent="1" vertex="1" style="rounded=1;fillColor=#f4f2fa;strokeColor=#807198;strokeWidth=2;">
+          <mxGeometry as="geometry" x="200" y="515" width="840" height="130" />
+        </mxCell>
+        <mxCell id="28" value="Intersección funcional" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=22;fontColor=#18304b;fontStyle=1;spacing=0;">
+          <mxGeometry as="geometry" x="220" y="530" width="1000" height="29" />
+        </mxCell>
+        <mxCell id="29" value="Coordinación del modelo y sus acciones; cambia qué engloba la etiqueta." parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="220" y="574" width="1000" height="26" />
+        </mxCell>
+        <mxCell id="30" value="Síntesis documental · consulta 2026-10-05/06 · fuentes y límites en el README" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="40" y="677" width="1180" height="23" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
