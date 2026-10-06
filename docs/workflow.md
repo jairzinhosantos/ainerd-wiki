@@ -11,7 +11,7 @@ El [modelo de gestión](project-management.md) conecta ideas, issues, PRDs breve
 ## Elaboración
 
 1. Identificar qué existe y la pregunta que falta resolver.
-2. Contrastar fuentes y versiones; separar afirmación atribuida, síntesis propia, hipótesis y resultado ejecutado.
+2. Contrastar fuentes y versiones según la [política de referencias](references.md); separar afirmación atribuida, síntesis propia, hipótesis y resultado ejecutado.
 3. Preparar el recorrido explicativo y sus diagramas progresivos. Añadir pruebas solo cuando la conclusión las necesite.
 4. Iterar con Jairzinho la prosa, profundidad y visuales, conforme al piloto editorial.
 5. Preparar un cambio sobre la revisión actual de la wiki; comparar contra la revisión base para no sobrescribir trabajo posterior.

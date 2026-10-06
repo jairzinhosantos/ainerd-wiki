@@ -27,109 +27,76 @@ El piloto termina cuando Jairzinho acepta la muestra y podemos actualizar una ob
 
 Feedback de Jairzinho del 2026-10-05: títulos concretos y puntuales, sin subtítulos adornados; mayor densidad en las explicaciones, tomando el estudio previo como referencia. Se aplicó a los mismos tres artículos: definición directa, encabezados descriptivos y desarrollo de mecanismos, dependencias, ejemplos y fallos. Se conservan los 18 diagramas. La voz sigue en calibración.
 
-El feedback posterior indica que esa revisión sigue lejos del tono buscado. Las nuevas referencias abren el harness completo y descienden a contexto, estado, memoria, checkpoint y traza. La explicación avanza mediante distinciones, ejemplos que cambian entre llamadas, esquemas y pseudocódigo. La propuesta siguiente prueba esa progresión en un fragmento acotado; no declara aceptados ni reemplaza todavía los tres artículos completos. Sus diagramas son modelos propios y el ejemplo no describe una API ni una implementación ejecutada.
+El feedback posterior indica que esa revisión sigue lejos del tono buscado. Las nuevas referencias abren el harness completo y descienden a contexto, estado, memoria, checkpoint y traza. La explicación avanza mediante distinciones, ejemplos que cambian entre llamadas, esquemas y pseudocódigo. La propuesta siguiente prueba esa progresión en un fragmento acotado; no declara aceptados ni reemplaza todavía los tres artículos completos. La revisión siguiente, guiada por las capturas entregadas por Jairzinho, prioriza definición breve, mapas ordenados y enlaces para profundizar. Las capturas se usan como referencia de composición, sin importar sus marcas o afirmaciones institucionales. La muestra incluye contraste con fuentes primarias y corrige dos simplificaciones: token no equivale necesariamente a palabra, y código/empresa no determinan por sí solos autonomía o riesgo. Los diagramas son síntesis propias.
 
 <!-- tone-sample:start -->
 # Harness
 
-Un **harness de IA** es el andamiaje de software que conecta el modelo con la ejecución de una tarea. Organiza las instrucciones, el contexto, las herramientas y el estado; además, establece cómo continúa el trabajo y cómo se comprueba el resultado. Aquí usamos el término en un sentido arquitectónico amplio. Una implementación concreta puede cubrir solo parte de estas responsabilidades.
+Un **harness de IA** es el andamiaje de software que rodea a un modelo para convertir sus capacidades en una solución que puede actuar, mantener continuidad y operar bajo controles. [OpenAI: el sistema alrededor del modelo](https://developers.openai.com/blog/codex-as-a-platform).
 
-Consideremos una tarea: **corregir una función que falla con una entrada vacía**. Para resolverla, el sistema necesita localizar el código, leer la prueba, preparar la llamada al modelo, ejecutar una edición y comprobar el resultado. La respuesta del modelo participa en ese proceso; la aplicación mantiene las conexiones entre cada paso.
+Un [modelo de lenguaje grande (LLM)](../concepts/models/language-models.md), en su forma autorregresiva, genera una secuencia prediciendo el siguiente token a partir de los anteriores. El harness conecta esa generación con contexto, herramientas y ejecución. La fiabilidad y la escala requieren decisiones de diseño y validación del sistema completo.
 
-## Componentes
+![Modelo al centro, rodeado por los componentes del harness: contexto, memoria, estado, recuperación, herramientas, orquestación, políticas, observabilidad, evaluación y runtime.](../assets/harness/overview.svg)
 
-El siguiente mapa agrupa responsabilidades. Algunas intervienen directamente en cada llamada; otras sostienen la ejecución o permiten analizarla después.
+*Síntesis propia basada en [OpenAI](https://developers.openai.com/api/docs/guides/agents/sandboxes) y [LangChain](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness). Las líneas indican relación; no son una secuencia de ejecución.*
 
-| Componente | Responsabilidad |
+Cada caja abre una parte del sistema. **Contexto** prepara lo que recibe el modelo; **herramientas** permiten ejecutar acciones; **orquestación** coordina los pasos. Memoria, estado y runtime sostienen la continuidad. Políticas, observabilidad y evaluación permiten controlar e inspeccionar el comportamiento.
+
+[Modelo](../concepts/models/language-models.md) · [Contexto y ensamblaje](#contexto-y-ensamblaje) · [Runtime y términos relacionados](#harness-runtime-y-harness-engineering)
+
+## Harness, runtime y harness engineering
+
+| Término | Qué describe |
 |---|---|
-| Interfaz y acceso | Recibir la tarea e identificar quién la solicita. |
-| Orquestación | Definir pasos, dependencias, decisiones, delegación e intervención humana. |
-| Runtime | Ejecutar operaciones y administrar su ciclo de vida. |
-| Contexto | Preparar la información de cada llamada al modelo. |
-| Estado y persistencia | Mantener los datos de trabajo y puntos de recuperación. |
-| Memoria | Conservar y recuperar información reutilizable entre tareas o sesiones, según su alcance. |
-| Conocimiento y recuperación | Consultar documentos, código, bases de datos y otras fuentes. |
-| Modelo | Producir respuestas o propuestas de acción a partir de la entrada recibida. |
-| Herramientas e integraciones | Ejecutar operaciones sobre archivos, APIs y otros sistemas. |
-| Seguridad y políticas | Delimitar acceso, uso de datos y acciones permitidas. |
-| Fiabilidad | Tratar fallos, límites, reintentos y efectos pendientes de confirmar. |
-| Observabilidad | Registrar eventos, relaciones entre operaciones y métricas. |
-| Evaluación | Contrastar resultados y comportamiento con criterios definidos. |
-| Operación | Gestionar configuración, versiones, despliegue y cambios del sistema. |
+| **AI harness** | El andamiaje alrededor del modelo, con un alcance que debe precisarse en cada sistema. |
+| **Agent harness** | Ese andamiaje aplicado a un agente: conecta llamadas al modelo, acciones, observaciones y continuidad. |
+| **Agent runtime** | La infraestructura que ejecuta el agente y gestiona su ciclo de vida; puede ofrecer persistencia, pausas y reanudación. |
+| **Framework** | Las abstracciones e integraciones con las que construimos el sistema. |
+| **Harness engineering** | El trabajo de diseñar, instrumentar, evaluar y mejorar el harness. |
 
-Estas responsabilidades se conectan. Recuperar un archivo requiere una herramienta y permisos; su contenido puede incorporarse al contexto; la ejecución actualiza el estado y emite información de observabilidad. Ubicar una operación en el mapa exige identificar su función, aunque varias funciones compartan una biblioteca.
+LangChain distingue runtime, framework y harness en su ecosistema; OpenAI describe el harness como el sistema que conduce el modelo y sus herramientas. Las fronteras pueden solaparse. **Harness engineering es una práctica; runtime es una responsabilidad de ejecución.** [LangChain: términos](https://docs.langchain.com/oss/python/concepts/products) · [LangChain: ingeniería del harness](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness).
 
-```mermaid
-flowchart TD
-    U["Tarea"] --> O["Orquestación y runtime"]
-    O --> C["Ensamblaje de contexto"]
-    S["Estado"] --> C
-    MEM["Memoria recuperada"] --> C
-    K["Conocimiento recuperado"] --> C
-    C --> M["Modelo"]
-    M --> D{"Resultado"}
-    D -->|acción propuesta| T["Política y ejecución de herramientas"]
-    T -->|observación| S
-    S -->|continuar| O
-    D -->|respuesta| E["Evaluación y entrega"]
-    O -.-> OBS["Observabilidad"]
-    T -.-> OBS
-    M -.-> OBS
-```
+## Agentes de código y agentes empresariales
 
-*Relaciones de ejecución y datos; las líneas discontinuas representan emisión de telemetría. Mapa propuesto, sin distribución física de servicios.*
+Comparten mecanismos. Cambian las tareas, el entorno, las herramientas y los criterios de resultado.
 
-## Contexto, estado y memoria
+![Comparación de agentes de código, responsabilidades comunes y agentes empresariales.](../assets/harness/scenarios.svg)
 
-En la tarea de edición, estos términos describen objetos diferentes:
+*Comparación conceptual propia. Los grupos muestran énfasis de diseño, no capacidades exclusivas.*
 
-| Objeto | Ejemplo | Uso |
-|---|---|---|
-| Estado | Archivo localizado, edición pendiente, prueba aún no ejecutada. | Continuar la tarea desde su situación actual. |
-| Memoria | Una decisión validada en una sesión anterior sobre convenciones del proyecto. | Reutilizarla cuando sea pertinente y siga vigente. |
-| Conocimiento | Código, pruebas y documentación consultables. | Obtener evidencia sobre el problema. |
-| Contexto | Petición, instrucciones, fragmento de código y resultado de prueba seleccionados para esta llamada. | Dar al modelo la información necesaria para el siguiente paso. |
-| Checkpoint | Estado persistido y datos de control necesarios para retomar la ejecución. | Recuperar el progreso dentro de las garantías del runtime. |
-| Traza | Operaciones realizadas, relaciones, entradas o referencias, resultados y duración. | Inspeccionar la ejecución y apoyar su evaluación. |
+Un agente de código puede trabajar sobre un repositorio, producir un diff y ejecutar pruebas. Uno empresarial puede coordinar consultas y operaciones sobre APIs. Ambos pueden requerir identidad, aislamiento, recuperación y aprobación humana. El nivel de autonomía depende del efecto de cada acción, no de la etiqueta del agente. OpenAI describe el uso de un mismo harness en interfaces y flujos de distintos dominios. [Fuente](https://developers.openai.com/blog/codex-as-a-platform).
 
-Un resultado de prueba puede participar en varios objetos. Forma parte del estado si el siguiente paso depende de él. Entra en el contexto si el modelo necesita interpretar el fallo. Puede registrarse en la traza para explicar qué ocurrió. Cada uso responde a una necesidad distinta; conservar ese resultado no implica convertirlo automáticamente en memoria de largo plazo.
+## Contexto y ensamblaje
 
-La memoria añade una decisión de conservación. Por ejemplo, una observación de esta tarea puede proponer una regla reutilizable, pero antes de guardarla hay que determinar su alcance, evidencia y vigencia. Un fallo aislado no basta para deducir una preferencia permanente. Una política de memoria puede aceptar el candidato, contrastarlo con información existente o descartarlo.
+**Contexto es la información que recibe el modelo en una llamada.** Estado, memoria y fuentes externas pueden aportar información; el ensamblaje selecciona qué entra y cómo se representa. [Anthropic: context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents).
 
-## Ensamblaje de contexto
+![Fuentes alineadas alimentan selección, transformación y ensamblaje, que producen el contexto de una llamada al modelo.](../assets/harness/context-assembly.svg)
 
-**Ensamblar contexto es construir la entrada de la siguiente llamada al modelo.** El sistema reúne candidatos, selecciona los pertinentes y los representa en el formato que requiere la integración. `assemble` nombra aquí esa responsabilidad; puede estar distribuida entre varias funciones.
+*Proceso propuesto. Las flechas muestran preparación de datos; las transformaciones se aplican según la necesidad de la llamada.*
 
-```mermaid
-flowchart LR
-    I["Instrucciones y tarea"] --> A["Seleccionar y ensamblar"]
-    H["Historial y estado"] --> A
-    R["Memoria y conocimiento recuperados"] --> A
-    T["Herramientas disponibles y resultados"] --> A
-    A --> C["Entrada de la llamada"]
-    C --> M["Modelo"]
-```
+| Concepto | Función |
+|---|---|
+| **Estado** | Mantener los datos que necesita la tarea para continuar. |
+| **Memoria** | Conservar información para recuperarla dentro de un alcance definido. |
+| **Contexto** | Entregar al modelo la información elegida para esta llamada. |
+| **Ensamblaje** | Construir esa entrada: contenido, roles, relaciones, orden y presupuesto. |
 
-*Fuentes candidatas y entrada seleccionada. La disponibilidad de una fuente no implica incluirla completa.*
+Para corregir una función, la primera llamada puede recibir la tarea y las herramientas de búsqueda. La siguiente incorpora las rutas encontradas. Después entran el código leído, la prueba y el resultado de ejecución. **El contexto se reconstruye a medida que avanza el trabajo.** Conservar todo el historial no obliga a enviarlo completo en cada llamada.
 
-En nuestro ejemplo, el primer ensamblaje puede incluir la petición, las instrucciones del proyecto y las herramientas para buscar código. El modelo propone una búsqueda. El runtime la ejecuta y obtiene rutas de archivos. En la segunda llamada, esas rutas permiten decidir qué archivo leer. Después de la lectura, el contexto puede incluir el fragmento que falla y su prueba.
+Una memoria puede sobrevivir entre sesiones y no ser pertinente ahora. El estado puede incluir datos de control que el modelo no necesita. Un checkpoint permite conservar estado para recuperación; una traza registra la ejecución. La organización concreta depende del runtime. [Ejemplo: persistencia en LangGraph](https://docs.langchain.com/oss/python/langgraph/persistence).
 
-| Llamada | Información que se incorpora | Decisión que permite |
-|---|---|---|
-| 1 | Objetivo, instrucciones y herramientas de búsqueda. | Localizar la función. |
-| 2 | Resultado de la búsqueda y estado de la tarea. | Elegir código y pruebas para inspeccionar. |
-| 3 | Código leído, prueba y restricciones de edición. | Proponer el cambio. |
-| 4 | Diff y resultado de la prueba ejecutada. | Corregir otro fallo o preparar la entrega. |
+[Profundizar en ensamblaje de contexto](../concepts/harness/context/context-assembly.md) · [Ver una implementación en Pi](../tech/pi/README.md)
 
-La información de una llamada puede conservarse, resumirse o quedar fuera de la siguiente. Si la búsqueda produjo muchas rutas, quizá baste con conservar las seleccionadas y una referencia al resultado completo. En cambio, la restricción de mantener la API pública debe seguir disponible mientras condicione la edición. La selección depende de la próxima decisión y de las obligaciones vigentes.
+## Referencias
 
-## Qué registrar
+Consultadas el 2026-10-05. Los mapas son síntesis propias; las capacidades de un producto se atribuyen a su documentación.
 
-Para analizar una respuesta interesa distinguir el estado guardado de la entrada efectivamente preparada. Entre ambos puede haber selección, compactación o transformaciones de formato. Un checkpoint del estado no reconstruye necesariamente esa entrada.
-
-Una instrumentación propuesta para el ensamblaje podría registrar las fuentes elegidas, las transformaciones aplicadas y una referencia a la entrada preparada, conforme a las reglas de acceso y conservación del proyecto. Así se puede investigar si faltó evidencia desde la recuperación o si se perdió después durante la selección. El registro ayuda a localizar el problema; determinar su causa requiere contrastarlo con el comportamiento observado.
-
-El siguiente nivel de detalle sería implementar este mismo ejemplo con un runtime concreto y observar cada llamada. La parte conceptual define qué seguir; el perfil tecnológico identifica dónde ocurre en el código; el laboratorio comprueba lo observado bajo una configuración fija.
+- [OpenAI — Codex as a platform](https://developers.openai.com/blog/codex-as-a-platform): responsabilidades del harness y usos en distintas aplicaciones.
+- [OpenAI — Sandbox agents](https://developers.openai.com/api/docs/guides/agents/sandboxes): separación entre harness y entorno de ejecución.
+- [LangChain — Runtimes, frameworks, and harnesses](https://docs.langchain.com/oss/python/concepts/products): distinción entre las tres categorías en su ecosistema.
+- [LangChain — The anatomy of an agent harness](https://www.langchain.com/blog/the-anatomy-of-an-agent-harness): componentes y práctica de ingeniería.
+- [Anthropic — Effective context engineering](https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents): selección, herramientas y gestión del contexto.
+- [LangGraph — Persistence](https://docs.langchain.com/oss/python/langgraph/persistence): estado, checkpoints y almacenamiento entre threads.
 <!-- tone-sample:end -->
 
 ## Comprobaciones de esta iteración
@@ -138,4 +105,4 @@ El siguiente nivel de detalle sería implementar este mismo ejemplo con un runti
 
 Los validadores de la wiki comprueban metadatos, relaciones, enlaces y catálogo. Las citas de Pi apuntan al commit examinado; otras fuentes documentales registran su consulta en el estudio. La sintaxis y el renderizado no sustituyen revisar semántica, claridad ni afirmaciones.
 
-La nueva muestra añade dos diagramas, verificados junto con los 18 anteriores: 20/20 renderizados sin errores. La preview abre la propuesta y conserva las lecturas anteriores para comparación.
+La muestra visual sustituye sus dos Mermaid por tres SVG con composición explícita: modelo central, escenarios y ensamblaje. Los 18 Mermaid anteriores permanecen en los artículos previos, fuera de la muestra vigente. La fuente de los SVG es scripts/generate_editorial_figures.py; se verificaron el renderizado en navegador, los enlaces internos y las etiquetas dentro del área de cada SVG.

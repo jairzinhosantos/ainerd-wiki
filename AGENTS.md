@@ -2,6 +2,8 @@
 
 Lee primero README.md y docs/workflow.md. Aplica docs/conventions.md y docs/writing-and-diagrams.md. Estas reglas son compartidas por las herramientas y las personas.
 
+Aplica docs/references.md: referencias próximas a las afirmaciones, fuentes primarias verificadas y atribución de gráficos y síntesis propias. Es una política de toda la wiki, incluidos los borradores públicos.
+
 - Escribe nombres de rutas en inglés; prosa, títulos visibles y explicaciones en español. Las claves y estados de control van en inglés.
 - Mantén IDs estables y una sola fuente por explicación. Nunca uses agents.md para un artículo conceptual.
 - Conserva concept, technology, architecture, comparison, benchmark y lab como tipos distintos; no impongas una capa única a cada producto.
