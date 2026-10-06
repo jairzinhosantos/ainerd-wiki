@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="730" viewBox="0 0 1240 730" role="img" aria-labelledby="title desc">
+<title id="title">Fronteras del harness</title><desc id="desc">Tres pasajes documentales; las cajas muestran alcances distintos.</desc>
+<rect width="1240" height="730" fill="#ffffff"/>
+<text x="40" y="52" font-family="Arial, sans-serif" font-size="30" fill="#18304b" font-weight="700">Fronteras del harness</text>
+<text x="40" y="88" font-family="Arial, sans-serif" font-size="17" fill="#53657a" font-weight="400">Tres pasajes documentales; las cajas muestran alcances distintos.</text>
+<rect x="40" y="130" width="360" height="345" rx="12" fill="#f3f7fc" stroke="#4e789f" stroke-width="2"/>
+<text x="60" y="167" font-family="Arial, sans-serif" font-size="22" fill="#18304b" font-weight="700">Anthropic · Managed Agents</text>
+<text x="60" y="208" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Dentro del harness</text>
+<text x="60" y="237" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Bucle: modelo y herramientas</text>
+<text x="60" y="266" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400"></text>
+<text x="60" y="295" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Componentes separados</text>
+<text x="60" y="324" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Sesión</text>
+<text x="60" y="353" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Sandbox</text>
+<rect x="440" y="130" width="360" height="345" rx="12" fill="#f0faf7" stroke="#40836e" stroke-width="2"/>
+<text x="460" y="167" font-family="Arial, sans-serif" font-size="22" fill="#18304b" font-weight="700">LangChain · Anatomía</text>
+<text x="460" y="208" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Alcance ampliado</text>
+<text x="460" y="237" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Código y configuración</text>
+<text x="460" y="266" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Lógica de ejecución</text>
+<text x="460" y="295" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Herramientas</text>
+<text x="460" y="324" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Infraestructura</text>
+<rect x="840" y="130" width="360" height="345" rx="12" fill="#fff8ee" stroke="#b27a38" stroke-width="2"/>
+<text x="860" y="167" font-family="Arial, sans-serif" font-size="22" fill="#18304b" font-weight="700">Cursor · Prácticas</text>
+<text x="860" y="208" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Componentes presentados</text>
+<text x="860" y="237" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Instrucciones</text>
+<text x="860" y="266" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Herramientas</text>
+<text x="860" y="295" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Modelo</text>
+<text x="860" y="324" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400"></text>
+<text x="860" y="353" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Ajustados para cada modelo</text>
+<rect x="200" y="515" width="840" height="130" rx="12" fill="#f4f2fa" stroke="#807198" stroke-width="2"/>
+<text x="220" y="552" font-family="Arial, sans-serif" font-size="22" fill="#18304b" font-weight="700">Intersección funcional</text>
+<text x="220" y="593" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Coordinación del modelo y sus acciones; cambia qué engloba la etiqueta.</text>
+<text x="40" y="693" font-family="Arial, sans-serif" font-size="16" fill="#18304b" font-weight="400">Síntesis documental · consulta 2026-10-05/06 · fuentes y límites en el README</text>
+</svg>

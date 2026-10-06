@@ -1,13 +1,12 @@
 {
-  "cutoff": "2026-10-05",
+  "cutoff": "2026-10-06",
   "inputs": [
     {
       "path": "observations.json",
-      "sha256": "cbafe321ecb553ca4d47003ec72ce5b857522308ac9211531972dccbf9e4c5a4"
+      "sha256": "2b055487ea4af67000f90d73f54bb672c3b56f9a9ee138f4953833e15f9eaa86"
     }
   ],
   "method": "Comparación documental intencional; sin ejecución. README.md describe selección y límites.",
-  "project_count": 27,
-  "primary_document_count": 11,
-  "observation_count": 38
+  "observation_count": 67,
+  "source_count": 67
 }

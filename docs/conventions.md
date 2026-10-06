@@ -14,7 +14,7 @@ El cuerpo tiene un único H1 que coincide con title. El renderer futuro debe evi
 
 id es globalmente único, legible y estable, independiente de la ruta. parent es una relación de lectura opcional y acíclica. related y requires son listas de IDs existentes. Una página publicada solo enlaza por esas relaciones a páginas publicadas. Los índices de navegación README sin frontmatter no se incluyen como artículos en el catálogo.
 
-sources es una lista de URLs públicas; citas y localizadores se explican en el texto. Esta lista no demuestra veracidad. Una página de tecnología publicada identifica examined_ref, con versión o commit. Una comparación conserva entradas y método conforme a benchmarks/README.md.
+sources es una lista de URLs públicas para artículos ordinarios. Una comparación puede usar evidence: observations.json en su lugar; ambos campos son excluyentes. El JSON schema_version 2 contiene sources y observations; cada observación enlaza citas por ID. Las referencias completas se presentan al final del README mediante un bloque generado, nunca como una lista extensa en la cabecera. Citas y localizadores se explican junto a las afirmaciones. Esta lista no demuestra veracidad. Una página de tecnología publicada identifica examined_ref, con versión o commit. Una comparación conserva entradas y método conforme a benchmarks/README.md.
 
 ## Relaciones y datos
 

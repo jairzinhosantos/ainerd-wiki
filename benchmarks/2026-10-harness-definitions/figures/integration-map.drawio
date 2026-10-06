@@ -1,0 +1,101 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net">
+  <diagram name="Integración y ejecución" id="integration-map">
+    <mxGraphModel page="1" pageWidth="1240" pageHeight="730">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="2" value="Integración y ejecución" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=30;fontColor=#18304b;fontStyle=1;spacing=0;">
+          <mxGeometry as="geometry" x="40" y="22" width="1180" height="37" />
+        </mxCell>
+        <mxCell id="3" value="Modos de uso documentados; sin puntuaciones ni clasificación de calidad." parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=17;fontColor=#53657a;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="40" y="71" width="1180" height="24" />
+        </mxCell>
+        <mxCell id="4" parent="1" vertex="1" style="rounded=1;fillColor=#f0faf7;strokeColor=#40836e;strokeWidth=2;">
+          <mxGeometry as="geometry" x="235" y="155" width="460" height="205" />
+        </mxCell>
+        <mxCell id="5" value="Agente aportado al servicio" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=22;fontColor=#18304b;fontStyle=1;spacing=0;">
+          <mxGeometry as="geometry" x="255" y="170" width="965" height="29" />
+        </mxCell>
+        <mxCell id="6" value="AgentCore Runtime" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="255" y="214" width="965" height="26" />
+        </mxCell>
+        <mxCell id="7" value="El consumidor aporta la lógica;" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="255" y="243" width="965" height="26" />
+        </mxCell>
+        <mxCell id="8" value="el servicio la aloja." parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="255" y="272" width="965" height="26" />
+        </mxCell>
+        <mxCell id="9" parent="1" vertex="1" style="rounded=1;fillColor=#f0faf7;strokeColor=#40836e;strokeWidth=2;">
+          <mxGeometry as="geometry" x="725" y="155" width="460" height="205" />
+        </mxCell>
+        <mxCell id="10" value="Harness gestionado" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=22;fontColor=#18304b;fontStyle=1;spacing=0;">
+          <mxGeometry as="geometry" x="745" y="170" width="475" height="29" />
+        </mxCell>
+        <mxCell id="11" value="OpenAI Agents API" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="745" y="214" width="475" height="26" />
+        </mxCell>
+        <mxCell id="12" value="El proveedor ejecuta el harness;" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="745" y="243" width="475" height="26" />
+        </mxCell>
+        <mxCell id="13" value="la aplicación le envía tareas." parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="745" y="272" width="475" height="26" />
+        </mxCell>
+        <mxCell id="14" parent="1" vertex="1" style="rounded=1;fillColor=#f3f7fc;strokeColor=#4e789f;strokeWidth=2;">
+          <mxGeometry as="geometry" x="235" y="390" width="460" height="205" />
+        </mxCell>
+        <mxCell id="15" value="Bucle configurado en la app" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=22;fontColor=#18304b;fontStyle=1;spacing=0;">
+          <mxGeometry as="geometry" x="255" y="405" width="965" height="29" />
+        </mxCell>
+        <mxCell id="16" value="Vercel ToolLoopAgent" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="255" y="449" width="965" height="26" />
+        </mxCell>
+        <mxCell id="17" value="El consumidor configura" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="255" y="478" width="965" height="26" />
+        </mxCell>
+        <mxCell id="18" value="modelo y herramientas." parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="255" y="507" width="965" height="26" />
+        </mxCell>
+        <mxCell id="19" parent="1" vertex="1" style="rounded=1;fillColor=#f3f7fc;strokeColor=#4e789f;strokeWidth=2;">
+          <mxGeometry as="geometry" x="725" y="390" width="460" height="205" />
+        </mxCell>
+        <mxCell id="20" value="Harness integrado por SDK" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=22;fontColor=#18304b;fontStyle=1;spacing=0;">
+          <mxGeometry as="geometry" x="745" y="405" width="475" height="29" />
+        </mxCell>
+        <mxCell id="21" value="Claude Agent SDK" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="745" y="449" width="475" height="26" />
+        </mxCell>
+        <mxCell id="22" value="La aplicación integra" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="745" y="478" width="475" height="26" />
+        </mxCell>
+        <mxCell id="23" value="el agente de Claude Code." parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="745" y="507" width="475" height="26" />
+        </mxCell>
+        <mxCell id="24" value="Servicio" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=22;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="40" y="208" width="1180" height="29" />
+        </mxCell>
+        <mxCell id="25" value="gestionado" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=22;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="40" y="240" width="1180" height="29" />
+        </mxCell>
+        <mxCell id="26" value="Ejecución en" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=22;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="40" y="443" width="1180" height="29" />
+        </mxCell>
+        <mxCell id="27" value="la aplicación" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=22;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="40" y="475" width="1180" height="29" />
+        </mxCell>
+        <mxCell id="28" value="La aplicación configura el agente" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="265" y="106" width="955" height="26" />
+        </mxCell>
+        <mxCell id="29" value="Integra un agente ensamblado" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=19;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="760" y="106" width="460" height="26" />
+        </mxCell>
+        <mxCell id="30" value="Cada celda muestra un modo de integración, no todos los despliegues posibles de ese producto." parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=18;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="40" y="632" width="1180" height="25" />
+        </mxCell>
+        <mxCell id="31" value="Fuentes y justificación de cada ubicación en el README · consulta 2026-10-06" parent="1" vertex="1" style="text;html=0;align=left;verticalAlign=middle;fontFamily=Arial;fontSize=16;fontColor=#18304b;fontStyle=0;spacing=0;">
+          <mxGeometry as="geometry" x="40" y="671" width="1180" height="23" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

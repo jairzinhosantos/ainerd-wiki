@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1240" height="730" viewBox="0 0 1240 730" role="img" aria-labelledby="title desc">
+<title id="title">Integración y ejecución</title><desc id="desc">Modos de uso documentados; sin puntuaciones ni clasificación de calidad.</desc>
+<rect width="1240" height="730" fill="#ffffff"/>
+<text x="40" y="52" font-family="Arial, sans-serif" font-size="30" fill="#18304b" font-weight="700">Integración y ejecución</text>
+<text x="40" y="88" font-family="Arial, sans-serif" font-size="17" fill="#53657a" font-weight="400">Modos de uso documentados; sin puntuaciones ni clasificación de calidad.</text>
+<rect x="235" y="155" width="460" height="205" rx="12" fill="#f0faf7" stroke="#40836e" stroke-width="2"/>
+<text x="255" y="192" font-family="Arial, sans-serif" font-size="22" fill="#18304b" font-weight="700">Agente aportado al servicio</text>
+<text x="255" y="233" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">AgentCore Runtime</text>
+<text x="255" y="262" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">El consumidor aporta la lógica;</text>
+<text x="255" y="291" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">el servicio la aloja.</text>
+<rect x="725" y="155" width="460" height="205" rx="12" fill="#f0faf7" stroke="#40836e" stroke-width="2"/>
+<text x="745" y="192" font-family="Arial, sans-serif" font-size="22" fill="#18304b" font-weight="700">Harness gestionado</text>
+<text x="745" y="233" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">OpenAI Agents API</text>
+<text x="745" y="262" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">El proveedor ejecuta el harness;</text>
+<text x="745" y="291" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">la aplicación le envía tareas.</text>
+<rect x="235" y="390" width="460" height="205" rx="12" fill="#f3f7fc" stroke="#4e789f" stroke-width="2"/>
+<text x="255" y="427" font-family="Arial, sans-serif" font-size="22" fill="#18304b" font-weight="700">Bucle configurado en la app</text>
+<text x="255" y="468" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Vercel ToolLoopAgent</text>
+<text x="255" y="497" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">El consumidor configura</text>
+<text x="255" y="526" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">modelo y herramientas.</text>
+<rect x="725" y="390" width="460" height="205" rx="12" fill="#f3f7fc" stroke="#4e789f" stroke-width="2"/>
+<text x="745" y="427" font-family="Arial, sans-serif" font-size="22" fill="#18304b" font-weight="700">Harness integrado por SDK</text>
+<text x="745" y="468" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Claude Agent SDK</text>
+<text x="745" y="497" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">La aplicación integra</text>
+<text x="745" y="526" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">el agente de Claude Code.</text>
+<text x="40" y="230" font-family="Arial, sans-serif" font-size="22" fill="#18304b" font-weight="400">Servicio</text>
+<text x="40" y="262" font-family="Arial, sans-serif" font-size="22" fill="#18304b" font-weight="400">gestionado</text>
+<text x="40" y="465" font-family="Arial, sans-serif" font-size="22" fill="#18304b" font-weight="400">Ejecución en</text>
+<text x="40" y="497" font-family="Arial, sans-serif" font-size="22" fill="#18304b" font-weight="400">la aplicación</text>
+<text x="265" y="125" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">La aplicación configura el agente</text>
+<text x="760" y="125" font-family="Arial, sans-serif" font-size="19" fill="#18304b" font-weight="400">Integra un agente ensamblado</text>
+<text x="40" y="650" font-family="Arial, sans-serif" font-size="18" fill="#18304b" font-weight="400">Cada celda muestra un modo de integración, no todos los despliegues posibles de ese producto.</text>
+<text x="40" y="687" font-family="Arial, sans-serif" font-size="16" fill="#18304b" font-weight="400">Fuentes y justificación de cada ubicación en el README · consulta 2026-10-06</text>
+</svg>

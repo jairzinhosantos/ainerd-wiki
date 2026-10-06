@@ -29,3 +29,5 @@ Cada figura tiene una pregunta, un pie que explica cómo leerla y un nivel de ev
 Mermaid admite también secuencias, estados y arquitecturas moderadas. Si el layout dificulta la lectura, dividir la vista por responsabilidad; para composición de mayor precisión usar Draw.io con fuente y exportación. No añadir nodos para aparentar profundidad. Validar sintaxis y renderizado, revisar etiquetas y legibilidad. En móvil, las vistas densas deben poder ampliarse o desplazarse sin reducir el texto hasta volverlo ilegible.
 
 El primer recorrido conecta harness, ensamblaje de contexto y Pi. Los borradores y esta guía continúan sujetos a la revisión de Jairzinho; el número de figuras no constituye aceptación editorial.
+
+En una comparación, abrir con el objeto y alcance del estudio. Concluir en coincidencias y diferencias; la definición adoptada pertenece al concepto. Los mapas de dos dimensiones explicitan ejes, modo de uso y fuente por ubicación; no inventan puntuaciones. Las cronologías distinguen publicaciones, releases y consultas. Una figura de solapamientos representa perspectivas documentadas, no capacidades inferidas por ausencia en un README.
