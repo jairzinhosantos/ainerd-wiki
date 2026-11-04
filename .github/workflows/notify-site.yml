@@ -1,0 +1,26 @@
+# Tells the website (jairzinhosantos/ai-portfolio-site) that chapters or posts
+# changed, so it regenerates its content and Netlify republishes in minutes.
+#
+# Secret SITE_DISPATCH_TOKEN: a fine-grained personal access token with access
+# to the ai-portfolio-site repository and "Contents: read and write" permission
+# (repository_dispatch needs it). Settings → Secrets and variables → Actions.
+name: Notify site
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'chapters/**'
+      - 'posts/**'
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Trigger "Refresh content" on the site
+        env:
+          GH_TOKEN: ${{ secrets.SITE_DISPATCH_TOKEN }}
+        run: gh api repos/jairzinhosantos/ai-portfolio-site/dispatches -f event_type=content-updated
