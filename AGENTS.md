@@ -13,4 +13,6 @@ Lee primero README.md y docs/workflow.md. Aplica docs/conventions.md y docs/writ
 - chapters/ es compatibilidad temporal. Sigue docs/migration.md antes de retirarla.
 - No mantengas dos autores escribiendo simultáneamente el mismo archivo. Registra siguiente paso y dudas al cerrar una sesión.
 
-- Consulta docs/project-management.md. Vincula la issue al Project, actualiza su estado al iniciar y al presentar revisión, y registra fechas reales y evidencia antes de cerrar.
+- Consulta docs/project-management.md. Vincula la issue al Project, actualiza su estado al iniciar y al presentar revisión, y registra evidencia y siguiente paso; el cierre corresponde a Jairzinho.
+
+- El agente llega como máximo a Review. Solo Jairzinho revisa e integra los PRs y mueve manualmente las tarjetas a Done. No fusionar PRs, habilitar auto-merge, cerrar issues como completadas ni asignar Completed date. Usar Refs en los PRs; no configurar cierres automáticos por eventos o checks.

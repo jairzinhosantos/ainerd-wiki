@@ -16,3 +16,7 @@ Fuentes, revisiones y comprobaciones. Distinguir lo declarado, inspeccionado y e
 ## Siguiente paso
 
 Indicar feedback pendiente del piloto o efecto sobre la publicación web.
+
+## Revisión manual
+
+Refs: indicar la issue sin palabras de cierre automático. El agente entrega en Review; Jairzinho revisa, integra y mueve la tarjeta a Done.
